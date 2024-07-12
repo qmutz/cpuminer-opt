@@ -6,7 +6,7 @@
 #
 
 # Build
-FROM ubuntu:16.04 as builder
+FROM ubuntu:xenial-20210416 as builder
 
 RUN apt-get update \
   && apt-get install -y \
@@ -22,7 +22,7 @@ COPY . /app/
 RUN cd /app/ && ./build.sh
 
 # App
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210416
 
 RUN apt-get update \
   && apt-get install -y \
